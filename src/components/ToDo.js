@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import ToDoForm from './ToDoForm';
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FaQuidditch } from "react-icons/fa";
 
 
-function ToDo() {
+function ToDo({todos, completeTodo}) {
     const [edit, setEdit] = useState ({
         id: null,
         value:''
@@ -19,7 +21,8 @@ function ToDo() {
         </div>
 
         <div className="icons">
-            
+         <FaRegTrashAlt/>
+         <FaQuidditch/>
         </div>
 
     </div>
