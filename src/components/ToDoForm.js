@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 
 function ToDoForm(props) {
-const [input, setInput] = useState ('')
+const [input, setInput] = useState ('');
 
 const handleChange = e => {
-    setInput(e.target.value)
-}
+    setInput(e.target.value);
+};
 
 const handleSubmit = e => {
    e.preventDefault();
@@ -15,23 +15,24 @@ const handleSubmit = e => {
     text: input
    });
 
-   setInput=('');
+   setInput('');
 };
 
 
   return (
-   <form className="todo-form" onSubmit={handleSubmit}>
+   <form className='todo-form' onSubmit={handleSubmit}>
 
     <input 
-    type="text" placeholder="Add a todo" 
+    type='text' placeholder='Add a todo' 
     value={input} 
-    name="text" 
-    className="todo-input" 
-    onChange={handleChange}/>
+    name='text' 
+    className='todo-input'
+    onChange={handleChange}
+    />
 
-    <button className="todo-button">Add todo</button>
+    <button className='todo-button'>Add todo</button>
    </form>
   )
 }
 
-export default ToDoForm
+export default ToDoForm;
