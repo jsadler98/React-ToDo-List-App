@@ -4,11 +4,24 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FaQuidditch } from "react-icons/fa";
 
 
-function ToDo({todos, completeTodo, removeTodo}) {
+function ToDo({todos, completeTodo, removeTodo, updateTodo}) {
     const [edit, setEdit] = useState ({
         id: null,
         value:''
-    })
+    });
+
+
+    const submitUpdate = value => {
+        updateTodo(edit.id, value)
+        setEdit({
+            id: null,
+            value: ''
+        })
+    }
+
+    if(edit.id) {
+        return <ToDoForm edit={edit} onSubmit={submitUpdate}/>;
+    }
     
 
   return todos.map((todo, index) => (
