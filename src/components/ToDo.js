@@ -4,7 +4,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FaQuidditch } from "react-icons/fa";
 
 
-function ToDo({todos, completeTodo}) {
+function ToDo({todos, completeTodo, removeTodo}) {
     const [edit, setEdit] = useState ({
         id: null,
         value:''
@@ -21,8 +21,14 @@ function ToDo({todos, completeTodo}) {
         </div>
 
         <div className="icons">
-         <FaRegTrashAlt/>
-         <FaQuidditch/>
+         <FaRegTrashAlt 
+         onClick={() => removeTodo(todo.id)}
+         className='delete-icon'
+         />
+         <FaQuidditch
+         onClick={() => setEdit({id: todo.id, value: todo.text})}
+         className='edit-icon'
+         />
         </div>
 
     </div>
